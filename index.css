@@ -560,7 +560,7 @@ body {
       rgba(10, 10, 10, 1),
       rgba(10, 10, 10, 0.6)
     ),
-    url("ttps://github.com/24spiders/24spiders.github.io/blob/main/img/bg.jpg?raw=true") center center fixed;
+    url("https://github.com/24spiders/24spiders.github.io/blob/main/img/bg.jpg?raw=true") center center fixed;
   --height: 50vh;
 }
 
