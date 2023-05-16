@@ -37,15 +37,15 @@
         <h1>Resume</h1>
         <div class="projects" id="resume_section"></div>
       </div>
-      <div id="Work" style="display:none;">
+      <div id="Work">
         <h1>Work</h1>
         <div class="projects" id="work_section"></div>
       </div>
-      <div id="Education" style="display:none;">
+      <div id="Education">
         <h1>Education</h1>
         <div class="projects" id="edu_section"></div>
       </div>
-      <div id="Publications" style="display:none;">
+      <div id="Publications">
         <h1>Publications</h1>
         <div class="projects" id="pub_section"></div>
       </div>
@@ -119,6 +119,7 @@
         maxColumns: 2,
         useTransform: true
       });
+      
       const magicProjectsGrid = new MagicGrid({
         container: "#pub_section",
         animate: false,
