@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,144 +10,143 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <link rel="stylesheet" href="index.css"></head>
-
-  <body>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
     <div id="loading">
-      <div id="spinner"></div>
+        <div id="spinner"></div>
     </div>
+    
     <div id="profile">
-      <div id="profile_img" style="background: url(https://github.com/24spiders/24spiders.github.io/blob/main/img/LiamBennettHeadshot.png?raw=true) center;"></div>
-      <div id="username"><span style="display:block;">Liam Bennett</span></div>
-      <div id="userbio" style="display: block;">Research Associate @ University of Alberta</div>
-      <div id="about">
-                <span style="display:none;"><i class="fas fa-users"></i> &nbsp; null</span>
-                <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
-                <span style="display:none;"><i class="fas fa-link"></i> &nbsp; <a href=""></a></span>
-                <span style="display:none;"><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp; null</span>
-                <span style="display:none;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
-                <div class="socials">
-                <span style="display:none !important;"><a href="https://www.twitter.com/null" target="_blank" class="socials"><i class="fab fa-twitter"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.dribbble.com/null" target="_blank" class="socials"><i class="fab fa-dribbble"></i></a></span>
-                <span style="display:block;"><a href="mailto:lgbennet@ualberta.ca" target="_blank" class="socials"><i class="fas fa-envelope"></i></a></span>
-                <span style="display:block;"><a href="https://www.linkedin.com/in/liam-bennett-//" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
-                <span style="display:block;"><a href="https://github.com/24spiders" target="_blank" class="socials"><i class="fab fa-github"></i></a></span>
-                <span style="display:none !important;"><a href="https://www.medium.com/@null/" target="_blank" class="socials"><i class="fab fa-medium-m"></i></a></span>
-                </div>
-                </div>
+        <div id="profile_img" style="background: url(https://github.com/24spiders/24spiders.github.io/blob/main/img/LiamBennettHeadshot.png?raw=true) center;"></div>
+        <div id="username"><span>Liam Bennett</span></div>
+        <div id="userbio">Research Associate @ University of Alberta</div>
+        <div id="about">
+            <div class="socials">
+                <span><a href="mailto:lgbennet@ualberta.ca" target="_blank" class="socials"><i class="fas fa-envelope"></i></a></span>
+                <span><a href="https://www.linkedin.com/in/liam-bennett-//" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
+                <span><a href="https://github.com/24spiders" target="_blank" class="socials"><i class="fab fa-github"></i></a></span>
+            </div>
+        </div>
     </div>
+
     <div id="display">
-      <div id="Resume">
-        <h1>Resume</h1>
-        <div class="projects" id="resume_section"></div>
-      </div>
-      <div id="About Me">
-        <h1>About Me</h1>
-        <div class="projects" id="work_section"></div>
-        <div id="edu"><p id="para_0_original">Research Associate, Spatial Modeling, Department of Civil and Environmental Engineering at the University of Alberta. My work focuses on developing practical applications of machine learning and data science methods for remote sensing data (drone, aerial, and satellite) to solve geospatial problems and enhance decision-making, with an emphasis on forestry and wildfire science.</p></div>
-      </div>
-      <div id="Education">
-        <h1>Education</h1>
-        <div class="projects" id="edu_section"></div>
-        <div id="edu"><p id="para_0_original">MSc. Civil and Environmental Engineering, University of Alberta (2021 - 2023)<br>BSc. Mechanical Engineering, University of Alberta (2016 - 2021)</p></div>
-      </div>
-      <div id="Publications">
-        <h1>Publications</h1>
-        <div class="projects" id="pub_section"></div>
-        <div id="edu"><p id="para_0_original">Bennett, L., Da Silva, C., & Boisvert, J. (2024). Spatial Modeling of Forest Attributes. <i>IntechOpen.</i> <a href="https://doi.org/10.5772/intechopen.115078">https://doi.org/10.5772/intechopen.115078</a></p></div>
-        <div id="edu"><p id="para_0_original">Bennett L., Yu Z., Wasowski R., Selland S., Otway S., Boisvert J. (2024). Individual tree detection and classification from RGB satellite imagery with applications to wildfire fuel mapping and exposure assessments. <i>International Journal of Wildland Fire</i>, 33, WF24008. <a href="https://doi.org/10.1071/WF24008">https://doi.org/10.1071/WF24008</a></p></div>
-        <div id="edu"><p id="para_0_original">Bennett, L. (2023). Wildfire Fuel Mapping with Convolutional Neural Networks for Remote Automated Exposure Assessment [University of Alberta]. <a href="https://doi.org/10.7939/r3-rcc5-z865">https://doi.org/10.7939/r3-rcc5-z865</a></p></div>
-        <div id="edu"><p id="para_0_original">Bennett, L., Wilson, B., Selland, S., Qian, L., Wood, M., Zhao, H., & Boisvert, J. (2022). Image to attribute model for trees (ITAM-T): individual tree detection and classification in Alberta boreal forest for wildland fire fuel characterization. <i>International Journal of Remote Sensing</i>, <i>43</i> (5), 1848–1880. <a href="https://doi.org/10.1080/01431161.2022.2048914">https://doi.org/10.1080/01431161.2022.2048914</a></p></div>
-        <h2>Conference Publications</h2>
-        <div id="edu"><p id="para_0_original">Bennett, L., & Boisvert, J. (2023). Drone technology in the fire services. <i>Alberta Fire Chiefs Association Conference.</i></a></p></div>
-        <div id="edu"><p id="para_0_original">Bennett, L., & Boisvert, J. (2022). Remotely Sensed Data and Wildfire Management – Developing Techniques for the ‘New Normal’’.’ <i>CIF-IFC National Conference and 114th AGM.</i></a></p></div>
-        <div id="edu"><p id="para_0_original">Boisvert, J., & Bennett, L. (2022). Advances in the Use of UAVs for Monitoring Fires and Conducting Hazard Assessments. <i>Wildland Fire Canada Conference.</i></a></p></div>
-        <div id="edu"><p id="para_0_original">Bennett, L., Boisvert, J., Otway, S., Cheng, L., Cunningham, S., & Debienne, S. (2021). Machine Learning Methods Applied to UAV and Satellite Imagery to Characterize Fuels, with Implications to Wildland Firefighter Training. <i>Fire Rescue Canada Conference.</i></a></p></div>
-        <div id="edu"><p id="para_0_original"> </a></p></div>
-     </div>
+        <div id="About Me">
+            <h1>About Me</h1>
+            <div id="edu">
+                <p>I am a Research Associate in Spatial Modeling (Department of Civil and Environmental Engineering) at the University of Alberta. My work focuses on developing practical applications of machine learning and data science methods for remote sensing data (drone, aerial, and satellite) to solve geospatial problems and enhance decision-making, with an emphasis on forestry and wildfire science.</p>
+            </div>
+            <div class="projects" id="resume_section"></div>
+        </div>
+
+        <div id="Projects">
+            <h1>Projects</h1>
+            <div class="projects" id="projects_section"></div>
+        </div>
+
+        <div id="Education">
+            <h1>Education</h1>
+            <div class="projects" id="edu_section"></div>
+            <div id="edu">
+                <p>MSc. Civil and Environmental Engineering, University of Alberta (2021 - 2023)<br>
+                BSc. Mechanical Engineering, University of Alberta (2016 - 2021)</p>
+            </div>
+        </div>
+
+        <div id="Publications">
+            <h1>Publications</h1>
+            <div class="projects" id="pub_section"></div>
+            <div id="edu">
+                <p>Bennett, L., Da Silva, C., & Boisvert, J. (2024). Spatial Modeling of Forest Attributes. <i>IntechOpen.</i> <a href="https://doi.org/10.5772/intechopen.115078">https://doi.org/10.5772/intechopen.115078</a></p>
+                <p>Bennett L., Yu Z., Wasowski R., Selland S., Otway S., Boisvert J. (2024). Individual tree detection and classification from RGB satellite imagery with applications to wildfire fuel mapping and exposure assessments. <i>International Journal of Wildland Fire</i>, 33, WF24008. <a href="https://doi.org/10.1071/WF24008">https://doi.org/10.1071/WF24008</a></p>
+                <p>Bennett, L. (2023). Wildfire Fuel Mapping with Convolutional Neural Networks for Remote Automated Exposure Assessment [University of Alberta]. <a href="https://doi.org/10.7939/r3-rcc5-z865">https://doi.org/10.7939/r3-rcc5-z865</a></p>
+                <p>Bennett, L., Wilson, B., Selland, S., Qian, L., Wood, M., Zhao, H., & Boisvert, J. (2022). Image to attribute model for trees (ITAM-T): individual tree detection and classification in Alberta boreal forest for wildland fire fuel characterization. <i>International Journal of Remote Sensing</i>, <i>43</i> (5), 1848–1880. <a href="https://doi.org/10.1080/01431161.2022.2048914">https://doi.org/10.1080/01431161.2022.2048914</a></p>
+            </div>
+
+            <h2>Conference Publications</h2>
+            <div id="edu">
+                <p>Bennett, L., & Boisvert, J. (2023). Drone technology in the fire services. <i>Alberta Fire Chiefs Association Conference.</i></p>
+                <p>Bennett, L., & Boisvert, J. (2022). Remotely Sensed Data and Wildfire Management – Developing Techniques for the 'New Normal''.' <i>CIF-IFC National Conference and 114th AGM.</i></p>
+                <p>Boisvert, J., & Bennett, L. (2022). Advances in the Use of UAVs for Monitoring Fires and Conducting Hazard Assessments. <i>Wildland Fire Canada Conference.</i></p>
+                <p>Bennett, L., Boisvert, J., Otway, S., Cheng, L., Cunningham, S., & Debienne, S. (2021). Machine Learning Methods Applied to UAV and Satellite Imagery to Characterize Fuels, with Implications to Wildland Firefighter Training. <i>Fire Rescue Canada Conference.</i></p>
+            </div>
+        </div>
     </div>
-    <script type="text/javascript">
-      setTimeout(function() {
-        document.getElementById("loading").classList.add("animated");
-        document.getElementById("loading").classList.add("fadeOut");
-        setTimeout(function() {
-          document.getElementById("loading").classList.remove("animated");
-          document.getElementById("loading").classList.remove("fadeOut");
-          document.getElementById("loading").style.display = "none";
-        }, 800);
-      }, 1500);
-      $.getJSON("blog.json", function(blog) {
-        blog = blog || [];
-        if (blog.length == 0) {
-          return (document.getElementById("blog_section").style.display =
-            "none");
-        }
-        for (var i = 0; i < blog.length; i++) {
-          $("#resume_section").append(`
-            <a href="./blog/${blog[i].url_title}/" target="_blank">
-                <section>
-                    <p style="text-align:center;"><img src="./blog/${blog[i].url_title}/${blog[i].top_image}" alt="Find my resume here" style="width:309px;height:403px"></p>
-                    <div class="blog_container">
-                        <div class="section_title">${blog[i].title}</div>
-                        <div class="about_section">
-                            ${blog[i].sub_title}
-                        </div>
-                    </div>
-                </section>
-            </a>
-            `);
-        }
-      }).fail(function() {
-        return (document.getElementById("blog_section").style.display = "none");
-      });
-    </script>
 
     <script>
-      const magicProjectsGrid = new MagicGrid({
-        container: "#resume_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+        // Loading animation
+        setTimeout(function() {
+            const loading = document.getElementById("loading");
+            loading.classList.add("animated", "fadeOut");
+            setTimeout(() => {
+                loading.classList.remove("animated", "fadeOut");
+                loading.style.display = "none";
+            }, 800);
+        }, 1500);
 
-      const magicForksGrid = new MagicGrid({
-        container: "#work_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-      
-      const magicProjectsGrid = new MagicGrid({
-        container: "#edu_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
-      
-      const magicProjectsGrid = new MagicGrid({
-        container: "#pub_section",
-        animate: false,
-        gutter: 30, // default gutter size
-        static: true,
-        useMin: false,
-        maxColumns: 2,
-        useTransform: true
-      });
+        // Resume section population
+        $.getJSON("resume.json", function(blog) {
+            if (blog && blog.length > 0) {
+                blog.forEach(item => {
+                    $("#resume_section").append(`
+                        <a href="./blog/${item.url_title}/" target="_blank">
+                            <section>
+                                <div class="section_title" style="text-align:center;">${item.title}</div>
+                                <p style="text-align:center;"><img src="./blog/${item.url_title}/${item.top_image}" alt="Find my resume here" style="width:309px;height:403px"></p>
+                            </section>
+                        </a>
+                    `);
+                });
+            } else {
+                document.getElementById("resume_section").style.display = "none";
+            }
+        }).fail(() => {
+            document.getElementById("resume_section").style.display = "none";
+        });
 
-      $("document").ready(() => {
-        magicProjectsGrid.listen();
-        magicForksGrid.listen();
-      });
+        // Projects section population
+        $.getJSON("blog.json", function(blog) {
+            if (blog && blog.length > 0) {
+                blog.filter(item => item.visible).forEach(item => {
+                    $("#projects_section").append(`
+                        <a href="./blog/${item.url_title}/" target="_blank">
+                            <section>
+                                <p style="text-align:center;"><img src="./blog/${item.url_title}/${item.top_image}" style="width:100%;height:auto"></p>
+                                <div class="blog_container">
+                                    <div class="section_title">${item.title}</div>
+                                    <div class="about_section">${item.sub_title}</div>
+                                </div>
+                            </section>
+                        </a>
+                    `);
+                });
+            } else {
+                document.getElementById("projects_section").style.display = "none";
+            }
+        }).fail(() => {
+            document.getElementById("projects_section").style.display = "none";
+        });
+
+        // Magic Grid initialization
+        const gridConfigs = [
+            { container: "#work_section" },
+            { container: "#edu_section" },
+            { container: "#pub_section" },
+            { container: "#projects_section" }
+        ];
+
+        gridConfigs.forEach(config => {
+            const magicGrid = new MagicGrid({
+                ...config,
+                animate: false,
+                gutter: 30,
+                static: true,
+                useMin: false,
+                maxColumns: 2,
+                useTransform: true
+            });
+            magicGrid.listen();
+        });
     </script>
-  
-
-</body></html>
+</body>
+</html>

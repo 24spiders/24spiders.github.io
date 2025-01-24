@@ -1,9 +1,23 @@
 [
  {
-  "url_title": "resume",
-  "title": "",
-  "sub_title": "",
+  "url_title": "canopycartographer",
+  "title": "CanopyCartographer",
+  "sub_title": "A tool for segmenting and monitoring forests from Landsat imagery",
   "top_image": "top_image.jpeg",
-  "visible": true
- }
+  "visible": false
+ },
+ {
+    "url_title": "weatherfetch",
+    "title": "WeatherFetch",
+    "sub_title": "WeatherFetch automatically downloads climatic variables and outputs them in analysis-ready spatial formats",
+    "top_image": "top_image.jpeg",
+    "visible": true
+   },
+{
+      "url_title": "cdsatmap",
+      "title": "ConDecMapper",
+      "sub_title": "Individual tree detection and classification from RGB satellite imagery with applications to wildfire fuel mapping and exposure assessments",
+      "top_image": "classified.jpeg",
+      "visible": true
+     }  
 ]
