@@ -19,5 +19,12 @@
       "sub_title": "Individual tree detection and classification from RGB satellite imagery with applications to wildfire fuel mapping and exposure assessments",
       "top_image": "classified.jpeg",
       "visible": true
+     },
+{
+      "url_title": "rgbtolasinator",
+      "title": "RGBtoLASinator",
+      "sub_title": "A simple package that reads 2D image annotations (in PascalVOC format) and infers the third dimension using a pointcloud, allowing for 3D boxes, tree height estimation, and annotated pointclouds",
+      "top_image": "top_image.jpeg",
+      "visible": true
      }  
 ]
