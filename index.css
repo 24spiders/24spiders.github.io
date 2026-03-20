@@ -686,3 +686,12 @@ body {
 .back-btn i {
     font-size: 11px;
 }
+
+@media (max-width: 768px) {
+    .back-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+    }
+}
