@@ -6,147 +6,280 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Liam Bennett</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/24spiders/24spiders.github.io/raw/main/img/tree_icon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: rgb(10, 10, 10);
+            --academic-accent: #3C3489;
+            --academic-accent-light: #7F77DD;
+            --gis-accent: #0F6E56;
+            --gis-accent-light: #1D9E75;
+            --text: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.45);
+            --divider: rgba(255, 255, 255, 0.07);
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Poppins", sans-serif;
+        }
+
+        .landing {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 48px;
+            text-decoration: none;
+            color: inherit;
+            transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .panel-academic {
+            background: #0a0a0a;
+        }
+
+        .panel-academic::before {
+            background: radial-gradient(ellipse at 50% 60%, rgba(60, 52, 137, 0.18) 0%, transparent 70%);
+        }
+
+        .panel-gis {
+            background: #080f0a;
+            border-left: 1px solid var(--divider);
+        }
+
+        .panel-gis::before {
+            background: radial-gradient(ellipse at 50% 60%, rgba(15, 110, 86, 0.18) 0%, transparent 70%);
+        }
+
+        .panel:hover {
+            flex: 1.55;
+        }
+
+        .panel:hover::before {
+            opacity: 1;
+        }
+
+        .panel-icon {
+            width: 64px;
+            height: 64px;
+            opacity: 0.6;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .panel:hover .panel-icon {
+            opacity: 1;
+            transform: translateY(-4px) scale(1.06);
+        }
+
+        .panel-title {
+            font-family: "Questrial", sans-serif;
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: #fff;
+            transition: letter-spacing 0.35s ease;
+        }
+
+        .panel:hover .panel-title {
+            letter-spacing: 0.07em;
+        }
+
+        .panel-sub {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 220px;
+            line-height: 1.7;
+            transition: color 0.35s ease;
+        }
+
+        .panel:hover .panel-sub {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .panel-cta {
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0);
+            border: 0.5px solid rgba(255, 255, 255, 0);
+            padding: 9px 24px;
+            border-radius: 4px;
+            transition: color 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+        }
+
+        .panel:hover .panel-cta {
+            color: rgba(255, 255, 255, 0.75);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .panel-cta:active {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            transform: scaleX(0);
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: left;
+        }
+
+        .panel-academic .accent-bar {
+            background: var(--academic-accent-light);
+        }
+
+        .panel-gis .accent-bar {
+            background: var(--gis-accent-light);
+        }
+
+        .panel:hover .accent-bar {
+            transform: scaleX(1);
+        }
+
+        .nameplate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .nameplate-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nameplate-name {
+            font-family: "Questrial", sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+        }
+
+        .nameplate-rule {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 640px) {
+            .landing {
+                flex-direction: column;
+            }
+
+            .panel {
+                flex: 1;
+                border-left: none;
+                border-top: 1px solid var(--divider);
+            }
+
+            .panel:first-child {
+                border-top: none;
+            }
+
+            .panel:hover {
+                flex: 1.4;
+            }
+
+            .panel-title {
+                font-size: 28px;
+            }
+
+            .panel-sub {
+                max-width: 280px;
+            }
+
+            .accent-bar {
+                bottom: auto;
+                top: 0;
+                height: 2px;
+                transform-origin: left;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="loading">
-        <div id="spinner"></div>
-    </div>
-    
-    <div id="profile">
-        <div id="profile_img" style="background: url(https://github.com/24spiders/24spiders.github.io/blob/main/img/LiamBennettHeadshot.png?raw=true) center;"></div>
-        <div id="username"><span>Liam Bennett</span></div>
-        <div id="userbio">Research Associate @ University of Alberta</div>
-        <div id="about">
-            <div class="socials">
-                <span><a href="mailto:lgbennet@ualberta.ca" target="_blank" class="socials"><i class="fas fa-envelope"></i></a></span>
-                <span><a href="https://www.linkedin.com/in/liam-bennett-//" target="_blank" class="socials"><i class="fab fa-linkedin-in"></i></a></span>
-                <span><a href="https://github.com/24spiders" target="_blank" class="socials"><i class="fab fa-github"></i></a></span>
-            </div>
+    <div class="nameplate">
+        <div class="nameplate-inner">
+            <span class="nameplate-name">Liam Bennett</span>
+            <div class="nameplate-rule"></div>
         </div>
     </div>
 
-    <div id="display">
-        <div id="About Me">
-            <h1>About Me</h1>
-            <div id="edu">
-                <p>I am a Research Associate in Spatial Modeling (Department of Civil and Environmental Engineering) at the University of Alberta. My work focuses on developing practical applications of machine learning and data science methods for remote sensing data (drone, aerial, and satellite) to solve geospatial problems and enhance decision-making, with an emphasis on forestry and wildfire science.</p>
-            </div>
-            <div class="projects" id="resume_section"></div>
-        </div>
+    <div class="landing">
+        <a class="panel panel-academic" href="/academic/">
+            <svg class="panel-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="32" width="44" height="24" rx="3" stroke="white" stroke-width="1.5"/>
+                <path d="M32 8L56 23H8L32 8Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <rect x="23" y="42" width="18" height="14" rx="2" stroke="white" stroke-width="1.2"/>
+            </svg>
+            <div class="panel-title">Academic</div>
+            <div class="panel-sub">Research, publications, and university work</div>
+            <div class="panel-cta">Enter &rarr;</div>
+            <div class="accent-bar"></div>
+        </a>
 
-        <div id="Projects">
-            <h1>Projects</h1>
-            <div class="projects" id="projects_section"></div>
-        </div>
-
-        <div id="Education">
-            <h1>Education</h1>
-            <div class="projects" id="edu_section"></div>
-            <div id="edu">
-                <p>MSc. Civil and Environmental Engineering, University of Alberta (2021 - 2023)<br>
-                BSc. Mechanical Engineering, University of Alberta (2016 - 2021)</p>
-            </div>
-        </div>
-
-        <div id="Publications">
-            <h1>Publications</h1>
-            <div class="projects" id="pub_section"></div>
-            <div id="edu">
-                <p>Bennett, L., Da Silva, C., & Boisvert, J. (2024). Spatial Modeling of Forest Attributes. <i>IntechOpen.</i> <a href="https://doi.org/10.5772/intechopen.115078">https://doi.org/10.5772/intechopen.115078</a></p>
-                <p>Bennett L., Yu Z., Wasowski R., Selland S., Otway S., Boisvert J. (2024). Individual tree detection and classification from RGB satellite imagery with applications to wildfire fuel mapping and exposure assessments. <i>International Journal of Wildland Fire</i>, 33, WF24008. <a href="https://doi.org/10.1071/WF24008">https://doi.org/10.1071/WF24008</a></p>
-                <p>Bennett, L. (2023). Wildfire Fuel Mapping with Convolutional Neural Networks for Remote Automated Exposure Assessment [University of Alberta]. <a href="https://doi.org/10.7939/r3-rcc5-z865">https://doi.org/10.7939/r3-rcc5-z865</a></p>
-                <p>Bennett, L., Wilson, B., Selland, S., Qian, L., Wood, M., Zhao, H., & Boisvert, J. (2022). Image to attribute model for trees (ITAM-T): individual tree detection and classification in Alberta boreal forest for wildland fire fuel characterization. <i>International Journal of Remote Sensing</i>, <i>43</i> (5), 1848–1880. <a href="https://doi.org/10.1080/01431161.2022.2048914">https://doi.org/10.1080/01431161.2022.2048914</a></p>
-            </div>
-
-            <h2>Conference Publications</h2>
-            <div id="edu">
-                <p>Bennett, L., & Boisvert, J. (2023). Drone technology in the fire services. <i>Alberta Fire Chiefs Association Conference.</i></p>
-                <p>Bennett, L., & Boisvert, J. (2022). Remotely Sensed Data and Wildfire Management – Developing Techniques for the 'New Normal''.' <i>CIF-IFC National Conference and 114th AGM.</i></p>
-                <p>Boisvert, J., & Bennett, L. (2022). Advances in the Use of UAVs for Monitoring Fires and Conducting Hazard Assessments. <i>Wildland Fire Canada Conference.</i></p>
-                <p>Bennett, L., Boisvert, J., Otway, S., Cheng, L., Cunningham, S., & Debienne, S. (2021). Machine Learning Methods Applied to UAV and Satellite Imagery to Characterize Fuels, with Implications to Wildland Firefighter Training. <i>Fire Rescue Canada Conference.</i></p>
-            </div>
-        </div>
+        <a class="panel panel-gis" href="/gis/">
+            <svg class="panel-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="22" stroke="white" stroke-width="1.5"/>
+                <ellipse cx="32" cy="32" rx="10" ry="22" stroke="white" stroke-width="1.2"/>
+                <line x1="10" y1="32" x2="54" y2="32" stroke="white" stroke-width="1.2"/>
+                <line x1="12" y1="21" x2="52" y2="21" stroke="white" stroke-width="0.7" opacity="0.45"/>
+                <line x1="12" y1="43" x2="52" y2="43" stroke="white" stroke-width="0.7" opacity="0.45"/>
+                <circle cx="32" cy="32" r="3" fill="white" opacity="0.55"/>
+            </svg>
+            <div class="panel-title">GIS Consulting</div>
+            <div class="panel-sub">Full-stack spatial data digitization, management, analysis, and web map development</div>
+            <div class="panel-cta">Enter &rarr;</div>
+            <div class="accent-bar"></div>
+        </a>
     </div>
-
-    <script>
-        // Loading animation
-        setTimeout(function() {
-            const loading = document.getElementById("loading");
-            loading.classList.add("animated", "fadeOut");
-            setTimeout(() => {
-                loading.classList.remove("animated", "fadeOut");
-                loading.style.display = "none";
-            }, 800);
-        }, 1500);
-
-        // Resume section population
-        $.getJSON("resume.json", function(blog) {
-            if (blog && blog.length > 0) {
-                blog.forEach(item => {
-                    $("#resume_section").append(`
-                        <a href="./blog/${item.url_title}/" target="_blank">
-                            <section>
-                                <p style="text-align:center;"><img src="./blog/${item.url_title}/${item.top_image}" alt="Find my resume here" style="width:50%;height:auto"></p>
-                                <div class="section_title" style="text-align:center;">${item.title}</div>
-                            </section>
-                        </a>
-                    `);
-                });
-            } else {
-                document.getElementById("resume_section").style.display = "none";
-            }
-        }).fail(() => {
-            document.getElementById("resume_section").style.display = "none";
-        });
-
-        // Projects section population
-        $.getJSON("blog.json", function(blog) {
-            if (blog && blog.length > 0) {
-                blog.filter(item => item.visible).forEach(item => {
-                    $("#projects_section").append(`
-                        <a href="./blog/${item.url_title}/" target="_blank">
-                            <section>
-                                <p style="text-align:center;"><img src="./blog/${item.url_title}/${item.top_image}" style="width:100%;height:auto"></p>
-                                <div class="blog_container">
-                                    <div class="section_title">${item.title}</div>
-                                    <div class="about_section">${item.sub_title}</div>
-                                </div>
-                            </section>
-                        </a>
-                    `);
-                });
-            } else {
-                document.getElementById("projects_section").style.display = "none";
-            }
-        }).fail(() => {
-            document.getElementById("projects_section").style.display = "none";
-        });
-
-        // Magic Grid initialization
-        const gridConfigs = [
-            { container: "#work_section" },
-            { container: "#edu_section" },
-            { container: "#pub_section" },
-            { container: "#projects_section" }
-        ];
-
-        gridConfigs.forEach(config => {
-            const magicGrid = new MagicGrid({
-                ...config,
-                animate: false,
-                gutter: 30,
-                static: true,
-                useMin: false,
-                maxColumns: 2,
-                useTransform: true
-            });
-            magicGrid.listen();
-        });
-    </script>
 </body>
 </html>
