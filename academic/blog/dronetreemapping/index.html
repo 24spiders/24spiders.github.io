@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ConDecMapper</title>
+    <title>Liam Bennett - Research Associate</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/24spiders/24spiders.github.io/raw/main/img/tree_icon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -35,13 +35,35 @@
         <p id="para_0_original">
           <h3>About</h3>
             <h4>Background</h4>
-            <p>Wildfire fuels are commonly mapped via manual interpretation of aerial photos. Alternatively, RGB satellite imagery offers data across large spatial extents. A method of individual tree detection and classification is developed with implications to fuel mapping and community wildfire exposure assessments.</p>
+            <p>
+              Wildfire fuel maps are required by decision-makers to predict how a fire will behave and to plan mitigation efforts.
+              Traditionally, these are generated using either satellite imagery or through field sampling campaigns.
+              The former is limited by the resolution of satellite sensors, while the latter requires costly and time-consuming field visits by trained professionals.
+              This study set out to develop a high-resolution (individual tree scale) fuel mapping workflow using consumer-grade drones and deep learning.
+            </p>
             <h4>Methods</h4>
-            <p>Convolutional neural networks are trained using a novel generational training process to detect trees in 0.50 m/px RGB imagery collected in Rocky Mountain and Boreal natural regions in Alberta, Canada by Pleiades-1 and WorldView-2 satellites. The workflow classifies detected trees as ‘green-in-winter’/‘brown-in-winter’, a proxy for coniferous/deciduous, respectively.</p>
+            <p>
+              A low-cost DJI Mavic Mini drone was flown over ten boreal forest sites in Alberta, capturing imagery at roughly 1.8 cm per pixel.
+              This imagery was manually annotated to create a training dataset for a two-stage convolutional neural network (CNN) pipeline called ITAM-T.
+              The first stage consisted of a RetinaNet-based model trained on local boreal data and enhanced with an "adaptive window size" technique to handle trees of varying sizes.
+              The second stage used a VGG19 network to classify each detected tree as either coniferous or deciduous.
+              Height, crown size, and stem density were then extracted from the detections using elevation data generated from photogrammetric point clouds.
+            </p>
+            <img src="abmap.jpeg" alt="blog image 0" id="img_0_original" style="width: 700px !important; height: auto !important;">
             <h4>Key Results</h4>
-            <p>A k-fold testing procedure compares algorithm detections to manual tree identification densities reaching an R2 of 0.82. The generational training process increased achieved R2 by 0.23. To assess classification accuracy, satellite detections are compared to manual annotations of 2 cm/px drone imagery resulting in average F1 scores of 0.85 and 0.82 for coniferous and deciduous trees respectively. The use of model outputs in tree density mapping and community-scale wildfire exposure assessments is demonstrated.</p>
+            <p>
+              The first stage of the pipeline, which focused on tree detection, achieved an average F1 score of 72% across the six test sites.
+              The second stage (classification as coniferous or deciduous) correctly identified coniferous and deciduous trees with 97% and 87% accuracy, respectively.
+              The combined pipeline reached average F1 scores of 72% for conifers and 57% for deciduous trees, with the drop in deciduous tree performance attributed to imperfect bounding boxes from the detection step due to deciduous trees tendency to overlap.
+              Stem density predictions were strong, with an average R² of 0.90 compared to manual counts.
+              The system was also demonstrated on a rural Alberta property, identifying trees by proximity to the residence for a preliminary wildfire hazard assessment.
+            </p>
             <h4>Conclusion & Implications</h4>
-            <p>The proposed workflow automates fine-scale overstorey tree mapping anywhere seasonal (winter and summer) 0.50 m/px RGB satellite imagery exists. Further development could enable the extraction of additional properties to inform a more complete fuel map.</p>
+            <p>
+              This work shows that low-cost drone imagery combined with deep learning can reliably detect and classify individual trees at a scale relevant to wildfire management.
+              This workflow does not require expensive LiDAR or multispectral sensors, and the outputs (tree type, height, crown size, and density) map directly to inputs needed by Canada's wildfire management systems.
+              While not a replacement for professional field assessment, the method offers a practical and scalable way to screen properties for wildfire exposure, monitor fuel treatments, and support land management decisions across Canada's vast wildland-urban interface.
+            </p>
           <h3>Paper Link</h3>
           <a href="https://doi.org/10.1080/01431161.2022.2048914">https://doi.org/10.1080/01431161.2022.2048914</a>
         </p>

@@ -8,10 +8,10 @@
      },
      {
           "url_title": "dronetreemapping",
-          "title": "Drone-Based Tree Mapping",
+          "title": "Drone Tree Mapping",
           "sub_title": "Individual tree detection and classification from RGB drone imagery with applications to wildfire fuel mapping and exposure assessments",
-          "top_image": "",
-          "visible": false
+          "top_image": "top_image.jpeg",
+          "visible": true
      },
      {
           "url_title": "canopycartographer",
