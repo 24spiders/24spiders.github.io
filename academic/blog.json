@@ -1,4 +1,11 @@
 [
+          {
+          "url_title": "fbpassessment",
+          "title": "Fire Spread Model Assessment",
+          "sub_title": "Assessing a popular fire spread model (W.I.S.E.) using a large set of satellite-derived wildfire perimeters",
+          "top_image": "top_image.jpeg",
+          "visible": true
+     },
      {
           "url_title": "cdsatmap",
           "title": "Satellite Tree Mapping",
